@@ -1,0 +1,7 @@
+import requests
+from config.settings import DISCORD_WEBHOOK_URL
+
+def send_discord_alert(message: str):
+    """ 디스코드 웹훅을 이용한 알림 전송 """
+    payload = {"content": message}
+    requests.post(DISCORD_WEBHOOK_URL, json=payload)
